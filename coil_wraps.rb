@@ -11,23 +11,8 @@ resistance = gets.chomp.to_f
 puts "what is the wire guage (AWG)?"
 wire = gets.chomp.to_i
 
-area =  case wire
-        when 20 then 0.518
-        when 21 then 0.41
-        when 22 then 0.326
-        when 23 then 0.258
-        when 24 then 0.205
-        when 25 then 0.162
-        when 26 then 0.129
-        when 27 then 0.102
-        when 28 then 0.081
-        when 29 then 0.0642
-        when 30 then 0.0509
-        when 31 then 0.0404
-        when 32 then 0.0320
-        when 33 then 0.0254
-        else 0.201
-        end
+# area calculation inspired by http://www.rapidtables.com/calc/wire/awg-to-mm.htm
+area = 0.012668 * 92**((36-wire)/19.5)
 
 puts "what is the jig diameter in millimeters?"
 diameter = gets.chomp.to_f
