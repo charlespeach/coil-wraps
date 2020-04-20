@@ -2,4 +2,4 @@
 
 require 'coilwraps'
 
-Coilwraps.run!
+Coilwraps::Presenter.run
